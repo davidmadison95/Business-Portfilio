@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - David Madison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Page Transition -->
+    <div class="page-transition"></div>
+
+    <!-- Background Pattern -->
+    <div class="background-pattern"></div>
+
+    <!-- Resume Modal (Same as index.html) -->
+    <div id="resumeModal" class="modal">
+        <!-- Copy the entire modal content from index.html -->
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">David Madison</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="skills.html">Skills</a>
+                <a href="experience.html">Experience</a>
+                <a href="contact.html">Contact</a>
+                <button id="resumeBtn" class="btn btn-resume">
+                    <i class="fas fa-file-download"></i> Resume
+                </button>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 100px;">
+        <h1 class="title">Featured Projects</h1>
+        <div class="projects-grid">
+            <!-- Air Jordan Legacy Project -->
+            <div class="project-card card">
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3>Air Jordan Legacy Website</h3>
+                    </div>
+                    <div class="project-image">
+                        <img src="/api/placeholder/600/400" alt="Air Jordan Legacy Website Preview" loading="lazy">
+                    </div>
+                    <div class="project-description">
+                        <p>A comprehensive multi-page website showcasing Air Jordan sneakers' history and cultural impact. The site features detailed information about brand evolution, iconic models, and their global influence on fashion and sports.</p>
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Dynamic comparison table of iconic models</li>
+                            <li>Interactive user feedback system</li>
+                            <li>Responsive design for all devices</li>
+                            <li>Cultural impact timeline</li>
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://davidmadison95.github.io/Air_Jordan_Website/" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/davidmadison95/Air_Jordan_Website" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                </div>
+            </div>
+
+            <!-- WebCraft Pro Project -->
+            <div class="project-card card">
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3>WebCraft Pro</h3>
+                    </div>
+                    <div class="project-image">
+                        <img src="/api/placeholder/600/400" alt="WebCraft Pro Website Preview" loading="lazy">
+                    </div>
+                    <div class="project-description">
+                        <p>A professional web solutions platform designed to empower businesses with custom web solutions. This project focuses on creating responsive, user-friendly websites that enhance online presence and drive business growth.</p>
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Custom website design showcase</li>
+                            <li>Content Management System integration</li>
+                            <li>E-commerce functionality</li>
+                            <li>Traffic analytics dashboard</li>
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">CMS</span>
+                        <span class="tag">E-commerce</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://davidmadison95.github.io/WebCraft-Pro/" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/davidmadison95/WebCraft-Pro" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Details Section -->
+        <div class="project-details">
+            <h2>Development Process</h2>
+            <div class="process-grid">
+                <div class="process-card card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Planning</h3>
+                    <p>Each project begins with thorough research and planning, focusing on user needs and business objectives.</p>
+                </div>
+                <div class="process-card card">
+                    <i class="fas fa-code"></i>
+                    <h3>Development</h3>
+                    <p>Implementation using modern web technologies and best practices for optimal performance.</p>
+                </div>
+                <div class="process-card card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Ensuring perfect functionality across all devices and screen sizes.</p>
+                </div>
+                <div class="process-card card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analytics</h3>
+                    <p>Integration of tracking tools to measure and improve performance.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
