@@ -150,27 +150,22 @@ body {
     padding: 2rem;
 }
 
-.title {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s forwards;
+/* Ensure elements are visible by default */
+.title, .subtitle, .education, .card, .skill-item {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: none !important; /* Disable animations */
 }
 
-.subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s 0.2s forwards;
+/* Set a higher z-index for main content to ensure it is above background elements */
+.skills-grid, .container, .hero, .navbar {
+    z-index: 10; /* Make sure it's higher than -1, -2 used for backgrounds */
 }
 
-.education {
-    color: var(--text-color);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s 0.4s forwards;
+/* Disable animation for modal visibility */
+.modal {
+    display: flex;
+    opacity: 1;
 }
 
 /* Buttons */
@@ -217,11 +212,6 @@ body {
     color: white;
 }
 
-.btn-resume {
-    background-color: var(--primary-color);
-    color: white;
-}
-
 /* Cards */
 .card {
     background: var(--card-bg);
@@ -230,234 +220,9 @@ body {
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 6px var(--shadow-color);
     transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.card.fade-in {
-    animation: fadeInUp 0.8s forwards;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px var(--shadow-color);
-}
-
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.project-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding: 2rem;
-}
-
-.project-image {
-    width: 100%;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s;
-}
-
-.project-card:hover .project-image img {
-    transform: scale(1.05);
-}
-
-/* Experience Timeline */
-.experience-timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-left: 2rem;
-}
-
-.experience-timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background: var(--primary-color);
-    opacity: 0.3;
-}
-
-.experience-card {
-    position: relative;
-    margin-bottom: 2rem;
-    padding: 2rem;
-}
-
-.timeline-marker {
-    position: absolute;
-    left: -2.5rem;
-    top: 2rem;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background: var(--primary-color);
-    border: 3px solid var(--bg-color);
-}
-
-.timeline-marker.current::after {
-    content: '';
-    position: absolute;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse 2s infinite;
-}
-
-/* Skills Section */
-.skills-grid {
-    display: grid;
-    gap: 2rem;
-}
-
-.skill-item {
-    margin-bottom: 1.5rem;
-}
-
-.skill-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-
-.skill-bar {
-    height: 0.5rem;
-    background: var(--border-color);
-    border-radius: 0.25rem;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: var(--primary-color);
-    transform: translateX(-100%);
-    transition: transform 1s ease-out;
-}
-
-/* Contact Section */
-.contact-wrapper {
-    display: grid;
-    gap: 2rem;
-}
-
-.quick-contact-grid {
-    display: grid;
-    gap: 1rem;
-}
-
-.quick-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: var(--bg-color);
-    border-radius: 0.5rem;
-    transition: transform 0.3s;
-    text-decoration: none;
-    color: var(--text-color);
-}
-
-.quick-contact-item:hover {
-    transform: translateX(10px);
-}
-
-/* Form Styles */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.input-wrapper {
-    position: relative;
-}
-
-.input-wrapper i {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--primary-color);
-}
-
-.input-wrapper input,
-.input-wrapper textarea {
-    width: 100%;
-    padding: 0.75rem 1rem 0.75rem 2.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: all 0.3s;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.modal.active {
-    display: flex;
-    opacity: 1;
-}
-
-.modal-content {
-    background: var(--card-bg);
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    border-radius: 1rem;
-    transform: translateY(-20px);
-    transition: transform 0.3s;
 }
 
 /* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.5; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
 @keyframes patternMove {
     0% { background-position: 0 0; }
     100% { background-position: 30px 30px; }
@@ -468,30 +233,14 @@ body {
     .nav-links {
         gap: 1rem;
     }
-
     .title {
         font-size: 2rem;
     }
-
     .subtitle {
         font-size: 1rem;
     }
-
-    .projects-grid,
-    .skills-grid,
-    .contact-wrapper {
+    .projects-grid, .skills-grid, .contact-wrapper {
         grid-template-columns: 1fr;
-    }
-
-    .modal-content {
-        width: 95%;
-        margin: 1rem;
-    }
-
-    .quick-contact-item,
-    .social-item {
-        flex-direction: column;
-        text-align: center;
     }
 }
 
@@ -500,16 +249,7 @@ body {
         font-size: 0.875rem;
         padding: 0.25rem;
     }
-
     .btn-resume {
         display: none;
-    }
-
-    .experience-timeline {
-        padding-left: 1rem;
-    }
-
-    .timeline-marker {
-        left: -1.5rem;
     }
 }
