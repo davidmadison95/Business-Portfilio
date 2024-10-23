@@ -258,127 +258,12 @@ const SkillAnimations = {
     }
 };
 
-// Contact Form
-const ContactForm = {
-    init() {
-        this.form = document.getElementById('contact-form');
-        if (this.form) {
-            this.bindEvents();
-        }
-    },
-
-    bindEvents() {
-        this.form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (this.validateForm()) {
-                this.submitForm();
-            }
-        });
-    },
-
-    validateForm() {
-        let isValid = true;
-        const inputs = this.form.querySelectorAll('input, textarea');
-        
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                isValid = false;
-                this.showError(input, 'This field is required');
-            } else {
-                this.clearError(input);
-            }
-        });
-
-        return isValid;
-    },
-
-    showError(input, message) {
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'error-message';
-        errorDiv.textContent = message;
-        input.parentNode.appendChild(errorDiv);
-    },
-
-    clearError(input) {
-        const errorDiv = input.parentNode.querySelector('.error-message');
-        if (errorDiv) {
-            errorDiv.remove();
-        }
-    },
-
-    submitForm() {
-        // Show success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'success-message';
-        successMessage.textContent = 'Message sent successfully!';
-        this.form.appendChild(successMessage);
-        
-        // Reset form
-        this.form.reset();
-        
-        // Remove success message after delay
-        setTimeout(() => {
-            successMessage.remove();
-        }, 3000);
-    }
-};
-
-// Analytics Tracking
-const Analytics = {
-    init() {
-        this.updateVisitorCount();
-        this.trackTimeOnSite();
-    },
-
-    updateVisitorCount() {
-        const count = parseInt(localStorage.getItem('visitor_count') || '0') + 1;
-        localStorage.setItem('visitor_count', count);
-        
-        const countElement = document.getElementById('visitorCount');
-        if (countElement) {
-            this.animateNumber(countElement, 0, count);
-        }
-    },
-
-    trackTimeOnSite() {
-        let seconds = 0;
-        const timeElement = document.getElementById('avgTime');
-        
-        setInterval(() => {
-            seconds++;
-            if (timeElement) {
-                const minutes = Math.floor(seconds / 60);
-                const remainingSeconds = seconds % 60;
-                timeElement.textContent = 
-                    `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-            }
-        }, 1000);
-    },
-
-    animateNumber(element, start, end) {
-        const duration = 2000;
-        const step = Math.ceil((end - start) / (duration / 50));
-        let current = start;
-        
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= end) {
-                current = end;
-                clearInterval(timer);
-            }
-            element.textContent = current;
-        }, 50);
-    }
-};
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     ThemeManager.init();
     PageTransitions.init();
     ResumeModal.init();
     SkillAnimations.init();
-    ContactForm.init();
-    Analytics.init();
 
     // Initialize typewriter effect if element exists
     const typewriterElement = document.querySelector('.typewriter');
