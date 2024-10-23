@@ -15,9 +15,89 @@
     <!-- Background Pattern -->
     <div class="background-pattern"></div>
 
-    <!-- Resume Modal (Same as index.html) -->
+    <!-- Resume Modal -->
     <div id="resumeModal" class="modal">
-        <!-- Copy the entire modal content from index.html -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-file-alt"></i> Download Resume</h2>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Resume Preview -->
+                <div class="resume-preview">
+                    <img src="/api/placeholder/600/800" alt="Resume Preview" class="preview-image">
+                    <div class="preview-overlay">
+                        <button class="btn btn-primary preview-btn">
+                            <i class="fas fa-eye"></i> View Full Resume
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Download Options -->
+                <div class="resume-options">
+                    <div class="resume-option">
+                        <div class="option-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="option-info">
+                            <h3>PDF Format</h3>
+                            <p>Best for printing and sharing</p>
+                            <span class="file-info">PDF • 284 KB</span>
+                        </div>
+                        <a href="assets/david-madison-resume.pdf" download class="btn btn-download" data-format="pdf">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+
+                    <div class="resume-option">
+                        <div class="option-icon">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <div class="option-info">
+                            <h3>Word Format</h3>
+                            <p>Editable document format</p>
+                            <span class="file-info">DOCX • 145 KB</span>
+                        </div>
+                        <a href="assets/david-madison-resume.docx" download class="btn btn-download" data-format="docx">
+                            <i class="fas fa-download"></i> Download DOCX
+                        </a>
+                    </div>
+
+                    <div class="resume-option">
+                        <div class="option-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="option-info">
+                            <h3>Plain Text</h3>
+                            <p>Compatible with ATS systems</p>
+                            <span class="file-info">TXT • 12 KB</span>
+                        </div>
+                        <a href="assets/david-madison-resume.txt" download class="btn btn-download" data-format="txt">
+                            <i class="fas fa-download"></i> Download TXT
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Download Stats -->
+                <div class="download-stats">
+                    <div class="stats-wrapper">
+                        <div class="stat-item">
+                            <i class="fas fa-download"></i>
+                            <span class="stat-value" id="totalDownloads">0</span>
+                            <span class="stat-label">Total Downloads</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span class="stat-value" id="lastDownload">Never</span>
+                            <span class="stat-label">Last Downloaded</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <nav class="navbar">
@@ -28,7 +108,6 @@
                 <a href="projects.html" class="active">Projects</a>
                 <a href="skills.html">Skills</a>
                 <a href="experience.html">Experience</a>
-                <a href="contact.html">Contact</a>
                 <button id="resumeBtn" class="btn btn-resume">
                     <i class="fas fa-file-download"></i> Resume
                 </button>
@@ -39,8 +118,9 @@
         </div>
     </nav>
 
-    <main class="container" style="padding-top: 100px;">
+    <main class="container">
         <h1 class="title">Featured Projects</h1>
+
         <div class="projects-grid">
             <!-- Air Jordan Legacy Project -->
             <div class="project-card card">
@@ -48,19 +128,14 @@
                     <div class="project-header">
                         <h3>Air Jordan Legacy Website</h3>
                     </div>
-                    <div class="project-image">
-                        <img src="/api/placeholder/600/400" alt="Air Jordan Legacy Website Preview" loading="lazy">
-                    </div>
-                    <div class="project-description">
-                        <p>A comprehensive multi-page website showcasing Air Jordan sneakers' history and cultural impact. The site features detailed information about brand evolution, iconic models, and their global influence on fashion and sports.</p>
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li>Dynamic comparison table of iconic models</li>
-                            <li>Interactive user feedback system</li>
-                            <li>Responsive design for all devices</li>
-                            <li>Cultural impact timeline</li>
-                        </ul>
-                    </div>
+                    <p>A comprehensive multi-page website showcasing Air Jordan sneakers' history and cultural impact, featuring brand evolution, iconic models, and their global influence on fashion and sports.</p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Dynamic comparison table of iconic models</li>
+                        <li>Interactive user feedback system</li>
+                        <li>Responsive design for all devices</li>
+                        <li>Cultural impact timeline</li>
+                    </ul>
                     <div class="tags">
                         <span class="tag">HTML5</span>
                         <span class="tag">CSS3</span>
@@ -84,19 +159,14 @@
                     <div class="project-header">
                         <h3>WebCraft Pro</h3>
                     </div>
-                    <div class="project-image">
-                        <img src="/api/placeholder/600/400" alt="WebCraft Pro Website Preview" loading="lazy">
-                    </div>
-                    <div class="project-description">
-                        <p>A professional web solutions platform designed to empower businesses with custom web solutions. This project focuses on creating responsive, user-friendly websites that enhance online presence and drive business growth.</p>
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li>Custom website design showcase</li>
-                            <li>Content Management System integration</li>
-                            <li>E-commerce functionality</li>
-                            <li>Traffic analytics dashboard</li>
-                        </ul>
-                    </div>
+                    <p>A professional web solutions platform designed to empower businesses with custom web solutions. This project focuses on creating responsive, user-friendly websites that enhance online presence and drive business growth.</p>
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li>Custom website design showcase</li>
+                        <li>Content Management System integration</li>
+                        <li>E-commerce functionality</li>
+                        <li>Traffic analytics dashboard</li>
+                    </ul>
                     <div class="tags">
                         <span class="tag">Web Design</span>
                         <span class="tag">CMS</span>
@@ -111,33 +181,6 @@
                     <a href="https://github.com/davidmadison95/WebCraft-Pro" target="_blank" class="btn btn-secondary">
                         <i class="fab fa-github"></i> Source Code
                     </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Details Section -->
-        <div class="project-details">
-            <h2>Development Process</h2>
-            <div class="process-grid">
-                <div class="process-card card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Planning</h3>
-                    <p>Each project begins with thorough research and planning, focusing on user needs and business objectives.</p>
-                </div>
-                <div class="process-card card">
-                    <i class="fas fa-code"></i>
-                    <h3>Development</h3>
-                    <p>Implementation using modern web technologies and best practices for optimal performance.</p>
-                </div>
-                <div class="process-card card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Responsive Design</h3>
-                    <p>Ensuring perfect functionality across all devices and screen sizes.</p>
-                </div>
-                <div class="process-card card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Analytics</h3>
-                    <p>Integration of tracking tools to measure and improve performance.</p>
                 </div>
             </div>
         </div>
