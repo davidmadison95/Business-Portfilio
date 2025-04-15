@@ -7,6 +7,213 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        .section-title {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.75rem;
+        }
+        
+        .section-title i {
+            margin-right: 0.75rem;
+            color: var(--primary-color);
+        }
+        
+        .experience-section, .projects-section, .education-section, .awards-section {
+            margin-bottom: 3rem;
+        }
+        
+        .experience-timeline {
+            position: relative;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -28px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid var(--card-bg);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+        }
+        
+        .timeline-marker.current {
+            background-color: var(--success-color);
+        }
+        
+        .timeline-marker.military {
+            background-color: #4b5563;
+        }
+        
+        .experience-card, .project-card, .education-card, .award-card {
+            margin-bottom: 2rem;
+            position: relative;
+            margin-left: 1.5rem;
+        }
+        
+        .experience-header, .project-header {
+            margin-bottom: 1rem;
+        }
+        
+        .experience-header h3, .project-header h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .company {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .experience-meta, .education-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .experience-meta i, .education-meta i {
+            margin-right: 0.4rem;
+        }
+        
+        .experience-details li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .key-achievements, .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .achievement-tag, .tech-tag {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .project-link i {
+            margin-right: 0.4rem;
+        }
+        
+        .project-description {
+            margin-bottom: 1.25rem;
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .degree-info {
+            flex: 1;
+        }
+        
+        .concentration {
+            display: block;
+            font-style: italic;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .course {
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .award-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .award-icon {
+            background-color: rgba(37, 99, 235, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .award-icon i {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+        
+        .award-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .award-content p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .honors-list, .membership-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0.5rem 0 0;
+        }
+        
+        .honors-list li, .membership-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .honors-list li:before, .membership-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+    </style>
 </head>
 <body>
     <!-- Page Transition -->
@@ -30,37 +237,37 @@
         </div>
     </nav>
 
-    <main class="container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
-        <h1 class="title" style="margin-bottom: 2.5rem; text-align: center;">Professional Journey</h1>
+    <main class="container">
+        <h1 class="title">Professional Journey</h1>
 
         <!-- Professional Experience -->
-        <section class="experience-section" style="margin-bottom: 3rem;">
-            <h2 class="section-title" style="margin-bottom: 1.75rem; display: flex; align-items: center; font-size: 1.5rem;">
-                <i class="fas fa-briefcase" style="margin-right: 0.75rem; color: #4a6cf7;"></i> Professional Experience
+        <section class="experience-section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i> Professional Experience
             </h2>
             
-            <div class="experience-timeline" style="position: relative;">
+            <div class="experience-timeline">
                 <!-- Current Position -->
-                <div class="experience-card card" style="padding: 1.75rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 2rem; position: relative; margin-left: 1.5rem;">
-                    <div class="timeline-marker current" style="position: absolute; left: -28px; width: 16px; height: 16px; border-radius: 50%; background-color: #4a6cf7; border: 3px solid #fff; box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.3);"></div>
-                    <div class="experience-header" style="margin-bottom: 1rem;">
-                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #333;">Senior Student Services Specialist | Supervisor</h3>
-                        <span class="company" style="font-weight: 500; color: #4a6cf7;">University of Oklahoma</span>
+                <div class="experience-card card">
+                    <div class="timeline-marker current"></div>
+                    <div class="experience-header">
+                        <h3>Senior Student Services Specialist | Supervisor</h3>
+                        <span class="company">University of Oklahoma</span>
                     </div>
-                    <div class="experience-meta" style="display: flex; gap: 1.5rem; margin-bottom: 1.25rem; color: #6c757d; font-size: 0.9rem;">
-                        <span><i class="fas fa-map-marker-alt" style="margin-right: 0.4rem;"></i> Norman, OK</span>
-                        <span><i class="fas fa-calendar" style="margin-right: 0.4rem;"></i> January 2023 - Present</span>
+                    <div class="experience-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Norman, OK</span>
+                        <span><i class="fas fa-calendar"></i> January 2023 - Present</span>
                     </div>
                     <div class="experience-content">
-                        <ul class="experience-details" style="padding-left: 1.25rem; margin-bottom: 1.25rem;">
-                            <li style="margin-bottom: 0.75rem;">Collaborated with cross-functional departments including Admissions, Financial Aid, and IT to troubleshoot student account issues, streamline processes, and ensure exceptional service.</li>
-                            <li style="margin-bottom: 0.75rem;">Worked alongside developers and IT staff to test new student service portal features, provide user feedback, and contribute to system enhancement discussions.</li>
-                            <li style="margin-bottom: 0;">Adapted quickly to new systems, demonstrating a consistent ability to learn and apply emerging technologies in a fast-paced environment.</li>
+                        <ul class="experience-details">
+                            <li>Collaborated with cross-functional departments including Admissions, Financial Aid, and IT to troubleshoot student account issues, streamline processes, and ensure exceptional service.</li>
+                            <li>Worked alongside developers and IT staff to test new student service portal features, provide user feedback, and contribute to system enhancement discussions.</li>
+                            <li>Adapted quickly to new systems, demonstrating a consistent ability to learn and apply emerging technologies in a fast-paced environment.</li>
                         </ul>
-                        <div class="key-achievements" style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-                            <span class="achievement-tag" style="display: inline-block; padding: 0.35rem 0.75rem; background-color: rgba(74, 108, 247, 0.1); color: #4a6cf7; border-radius: 4px; font-size: 0.85rem;">System Testing</span>
-                            <span class="achievement-tag" style="display: inline-block; padding: 0.35rem 0.75rem; background-color: rgba(74, 108, 247, 0.1); color: #4a6cf7; border-radius: 4px; font-size: 0.85rem;">User Feedback</span>
-                            <span class="achievement-tag" style="display: inline-block; padding: 0.35rem 0.75rem; background-color: rgba(74, 108, 247, 0.1); color: #4a6cf7; border-radius: 4px; font-size: 0.85rem;">Technical Adaptation</span>
+                        <div class="key-achievements">
+                            <span class="achievement-tag">System Testing</span>
+                            <span class="achievement-tag">User Feedback</span>
+                            <span class="achievement-tag">Technical Adaptation</span>
                         </div>
                     </div>
                 </div>
@@ -117,29 +324,29 @@
         </section>
 
         <!-- Projects Section -->
-        <section class="projects-section" style="margin-bottom: 3rem;">
-            <h2 class="section-title" style="margin-bottom: 1.75rem; display: flex; align-items: center; font-size: 1.5rem;">
-                <i class="fas fa-code" style="margin-right: 0.75rem; color: #4a6cf7;"></i> Personal Projects
+        <section class="projects-section">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i> Personal Projects
             </h2>
             
-            <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card card" style="padding: 1.75rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); height: 100%; display: flex; flex-direction: column;">
-                    <div class="project-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem;">
-                        <h3 style="font-size: 1.25rem; margin: 0; color: #333;">Interactive Calendar Application</h3>
-                        <a href="#" class="project-link" style="display: inline-flex; align-items: center; color: #4a6cf7; text-decoration: none; font-size: 0.9rem;"><i class="fas fa-external-link-alt" style="margin-right: 0.4rem;"></i> View Project</a>
+                <div class="project-card card">
+                    <div class="project-header">
+                        <h3>Interactive Calendar Application</h3>
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
                     </div>
-                    <div class="project-content" style="flex-grow: 1; display: flex; flex-direction: column;">
-                        <p class="project-description" style="margin-bottom: 1.25rem; color: #6c757d; font-size: 0.95rem;">A sleek, functional calendar web application that allows users to view, manage, and interact with calendar dates in an intuitive interface optimized for daily scheduling and task planning.</p>
-                        <ul class="project-details" style="padding-left: 1.25rem; margin-bottom: 1.25rem;">
-                            <li style="margin-bottom: 0.75rem;">Designed and developed a dynamic calendar interface using HTML, CSS, JavaScript, and Python, enabling users to seamlessly navigate through months, highlight specific dates, and interact with events.</li>
-                            <li style="margin-bottom: 0;">Maintained responsive design and user-friendly functionality across all devices.</li>
+                    <div class="project-content">
+                        <p class="project-description">A sleek, functional calendar web application that allows users to view, manage, and interact with calendar dates in an intuitive interface optimized for daily scheduling and task planning.</p>
+                        <ul class="project-details">
+                            <li>Designed and developed a dynamic calendar interface using HTML, CSS, JavaScript, and Python, enabling users to seamlessly navigate through months, highlight specific dates, and interact with events.</li>
+                            <li>Maintained responsive design and user-friendly functionality across all devices.</li>
                         </ul>
-                        <div class="project-tech" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: auto;">
-                            <span class="tech-tag" style="display: inline-block; padding: 0.35rem 0.75rem; background-color: rgba(74, 108, 247, 0.1); color: #4a6cf7; border-radius: 4px; font-size: 0.85rem;">HTML</span>
-                            <span class="tech-tag" style="display: inline-block; padding: 0.35rem 0.75rem; background-color: rgba(74, 108, 247, 0.1); color: #4a6cf7; border-radius: 4px; font-size: 0.85rem;">CSS</span>
-                            <span class="tech-tag" style="display: inline-block; padding: 0.35rem 0.75rem; background-color: rgba(74, 108, 247, 0.1); color: #4a6cf7; border-radius: 4px; font-size: 0.85rem;">JavaScript</span>
-                            <span class="tech-tag" style="display: inline-block; padding: 0.35rem 0.75rem; background-color: rgba(74, 108, 247, 0.1); color: #4a6cf7; border-radius: 4px; font-size: 0.85rem;">Python</span>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Python</span>
                         </div>
                     </div>
                 </div>
@@ -167,12 +374,12 @@
         </section>
 
         <!-- Education Section -->
-        <section class="education-section" style="margin-bottom: 3rem;">
-            <h2 class="section-title" style="margin-bottom: 1.75rem; display: flex; align-items: center; font-size: 1.5rem;">
-                <i class="fas fa-graduation-cap" style="margin-right: 0.75rem; color: #4a6cf7;"></i> Education
+        <section class="education-section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Education
             </h2>
             
-            <div class="education-card card" style="padding: 1.75rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <div class="education-card card">
                 <div class="education-header">
                     <div class="degree-info">
                         <h3>Bachelor of Science in Information Technology</h3>
@@ -199,20 +406,20 @@
         </section>
 
         <!-- Leadership & Awards -->
-        <section class="awards-section" style="margin-bottom: 3rem;">
-            <h2 class="section-title" style="margin-bottom: 1.75rem; display: flex; align-items: center; font-size: 1.5rem;">
-                <i class="fas fa-trophy" style="margin-right: 0.75rem; color: #4a6cf7;"></i> Leadership & Awards
+        <section class="awards-section">
+            <h2 class="section-title">
+                <i class="fas fa-trophy"></i> Leadership & Awards
             </h2>
             
-            <div class="awards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="awards-grid">
                 <!-- Academic Awards -->
-                <div class="award-card card" style="padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; align-items: flex-start; height: 100%;">
-                    <div class="award-icon" style="background-color: rgba(74, 108, 247, 0.1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
-                        <i class="fas fa-award" style="color: #4a6cf7; font-size: 1.25rem;"></i>
+                <div class="award-card card">
+                    <div class="award-icon">
+                        <i class="fas fa-award"></i>
                     </div>
                     <div class="award-content">
-                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: #333;">Outstanding Student Award in Information Technology</h3>
-                        <p style="margin: 0; color: #6c757d; font-size: 0.9rem;">Recognized for academic excellence and contributions to the field</p>
+                        <h3>Outstanding Student Award in Information Technology</h3>
+                        <p>Recognized for academic excellence and contributions to the field</p>
                     </div>
                 </div>
                 
