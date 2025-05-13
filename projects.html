@@ -1,134 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - David Madison</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-</head>
-<body>
-    <!-- Page Transition -->
-    <div class="page-transition"></div>
-
-    <!-- Background Pattern -->
-    <div class="background-pattern"></div>
-
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="index.html" class="logo">David Madison</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="projects.html" class="active">Projects</a>
-                <a href="skills.html">Skills</a>
-                <a href="experience.html">Experience</a>
-                <button id="theme-toggle" class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                </button>
+<!-- WebCraft Pro Project -->
+        <div class="project-card card">
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>WebCraft Pro</h3>
+                </div>
+                <p>A professional web solutions platform designed to empower businesses with custom web solutions. This project focuses on creating responsive, user-friendly websites that enhance online presence and drive business growth.</p>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Custom website design showcase</li>
+                    <li>Content Management System integration</li>
+                    <li>E-commerce functionality</li>
+                    <li>Traffic analytics dashboard</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">Web Design</span>
+                    <span class="tag">CMS</span>
+                    <span class="tag">E-commerce</span>
+                    <span class="tag">Analytics</span>
+                </div>
+            </div>
+            <div class="project-links">
+                <a href="https://davidmadison95.github.io/WebCraft-Pro/" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="https://github.com/davidmadison95/WebCraft-Pro" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
             </div>
         </div>
-    </nav>
 
-    <main class="container">
-        <h1 class="title">Featured Projects</h1>
-
-        <div class="projects-grid">
-            <!-- Calendar Application Project -->
-            <div class="project-card card">
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3>Interactive Calendar Application</h3>
-                    </div>
-                    <p>An intuitive calendar tool that allows users to organize and track events efficiently, providing interactive features for streamlined date selection, event reminders, and customization options.</p>
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li>User-friendly interface with seamless navigation</li>
-                        <li>Event scheduling and reminders with visual highlights</li>
-                        <li>Responsive design adaptable to all devices</li>
-                        <li>Integration of Python for backend functionalities and data handling</li>
-                    </ul>
-                    <div class="tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Python</span>
-                    </div>
+        <!-- Mini Roguelike Game Project -->
+        <div class="project-card card">
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>Mini Roguelike Game</h3>
                 </div>
-                <div class="project-links">
-                    <a href="https://davidmadison95.github.io/calendar-app/" target="_blank" class="btn btn-primary">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a href="https://github.com/davidmadison95/calendar-app" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-github"></i> Source Code
-                    </a>
+                <p>A browser-based mini roguelike game featuring turn-based combat, enemy AI, and procedural elements. Players navigate through a dungeon, battle enemies, collect health potions, and try to reach the exit while managing their health and turn count.</p>
+                <h4>Key Features:</h4>
+                <ul>
+                    <li>Turn-based movement and combat system</li>
+                    <li>Responsive design with mobile touch controls</li>
+                    <li>Simple AI for enemy movement and combat</li>
+                    <li>High score tracking with local storage</li>
+                    <li>Sound effects using Web Audio API</li>
+                    <li>Swipe gestures for mobile gameplay</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Game Development</span>
+                    <span class="tag">Web Audio API</span>
                 </div>
             </div>
-
-            <!-- Air Jordan Legacy Project -->
-            <div class="project-card card">
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3>Air Jordan Legacy Website</h3>
-                    </div>
-                    <p>A comprehensive multi-page website showcasing Air Jordan sneakers' history and cultural impact, featuring brand evolution, iconic models, and their global influence on fashion and sports.</p>
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li>Dynamic comparison table of iconic models</li>
-                        <li>Interactive user feedback system</li>
-                        <li>Responsive design for all devices</li>
-                        <li>Cultural impact timeline</li>
-                    </ul>
-                    <div class="tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Responsive Design</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <a href="https://davidmadison95.github.io/Air_Jordan_Website/" target="_blank" class="btn btn-primary">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a href="https://github.com/davidmadison95/Air_Jordan_Website" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-github"></i> Source Code
-                    </a>
-                </div>
-            </div>
-
-            <!-- WebCraft Pro Project -->
-            <div class="project-card card">
-                <div class="project-content">
-                    <div class="project-header">
-                        <h3>WebCraft Pro</h3>
-                    </div>
-                    <p>A professional web solutions platform designed to empower businesses with custom web solutions. This project focuses on creating responsive, user-friendly websites that enhance online presence and drive business growth.</p>
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li>Custom website design showcase</li>
-                        <li>Content Management System integration</li>
-                        <li>E-commerce functionality</li>
-                        <li>Traffic analytics dashboard</li>
-                    </ul>
-                    <div class="tags">
-                        <span class="tag">Web Design</span>
-                        <span class="tag">CMS</span>
-                        <span class="tag">E-commerce</span>
-                        <span class="tag">Analytics</span>
-                    </div>
-                </div>
-                <div class="project-links">
-                    <a href="https://davidmadison95.github.io/WebCraft-Pro/" target="_blank" class="btn btn-primary">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    <a href="https://github.com/davidmadison95/WebCraft-Pro" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-github"></i> Source Code
-                    </a>
-                </div>
+            <div class="project-links">
+                <a href="#" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="#" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
             </div>
         </div>
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
