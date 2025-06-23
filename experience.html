@@ -20,7 +20,7 @@
             color: var(--primary-color);
         }
         
-        .experience-section, .projects-section, .education-section, .awards-section {
+        .experience-section, .projects-section, .education-section, .certifications-section, .awards-section {
             margin-bottom: 3rem;
         }
         
@@ -47,7 +47,7 @@
             background-color: #4b5563;
         }
         
-        .experience-card, .project-card, .education-card, .award-card {
+        .experience-card, .project-card, .education-card, .award-card, .cert-card {
             margin-bottom: 2rem;
             position: relative;
             margin-left: 1.5rem;
@@ -99,8 +99,6 @@
             font-size: 0.85rem;
         }
         
-
-        
         .education-header {
             display: flex;
             justify-content: space-between;
@@ -134,6 +132,65 @@
             font-size: 0.9rem;
         }
         
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .cert-card {
+            margin-left: 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .cert-icon {
+            background-color: rgba(37, 99, 235, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .cert-icon i {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+        
+        .cert-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cert-content p {
+            margin: 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .cert-status {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        .cert-status.completed {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+        
+        .cert-status.in-progress {
+            background-color: rgba(251, 191, 36, 0.1);
+            color: #f59e0b;
+        }
+        
         .awards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -143,6 +200,7 @@
         .award-card {
             display: flex;
             align-items: flex-start;
+            margin-left: 0;
         }
         
         .award-icon {
@@ -238,7 +296,7 @@
                     </div>
                     <div class="experience-content">
                         <ul class="experience-details">
-                            <li>Collaborated with cross-functional departments including Admissions, Financial Aid, and IT to troubleshoot student account issues, streamline processes, and ensure exceptional service.</li>
+                            <li>Collaborated with cross-functional departments, including Admissions, Financial Aid, and IT, to troubleshoot student account issues, streamline processes, and ensure exceptional service.</li>
                             <li>Worked alongside developers and IT staff to test new student service portal features, provide user feedback, and contribute to system enhancement discussions.</li>
                             <li>Adapted quickly to new systems, demonstrating a consistent ability to learn and apply emerging technologies in a fast-paced environment.</li>
                         </ul>
@@ -265,7 +323,6 @@
                         <ul class="experience-details">
                             <li>Trained, mentored, and supervised a team of 8–10 soldiers in all aspects of field artillery operations, including fire mission execution, safety protocols, and crew drills under varying field conditions.</li>
                             <li>Managed the secure loading and handling of COMSEC equipment, including black key encryption for SINCGARS radios, enabling encrypted voice and digital communications across the entire unit.</li>
-                            <li>Led a field artillery section operating the M777A2 howitzer, overseeing fire mission execution, tactical deployment, and maintenance in both training and operational environments.</li>
                         </ul>
                         <div class="key-achievements">
                             <span class="achievement-tag">Secure Communications</span>
@@ -288,7 +345,7 @@
                     </div>
                     <div class="experience-content">
                         <ul class="experience-details">
-                            <li>Managed and maintained comprehensive personnel records for over 1,000 service members, ensuring accuracy, consistency, and structured data storage. Skills directly applicable to relational databases and frontend architecture in full-stack development.</li>
+                            <li>Managed records for 1,000+ service members with attention to accuracy and data structure, aligning with relational database and frontend development skills.</li>
                             <li>Handled confidential data with the highest level of security, reinforcing secure data transmission and access protocols akin to full-stack best practices in user authentication and authorization.</li>
                         </ul>
                         <div class="key-achievements">
@@ -301,14 +358,29 @@
             </div>
         </section>
 
-
-
         <!-- Education Section -->
         <section class="education-section">
             <h2 class="section-title">
                 <i class="fas fa-graduation-cap"></i> Education
             </h2>
             
+            <!-- Master's Degree -->
+            <div class="education-card card">
+                <div class="education-header">
+                    <div class="degree-info">
+                        <h3>Master of Science in Computer Science</h3>
+                        <span class="concentration">Concentration: Artificial Intelligence</span>
+                    </div>
+                    <div class="school-info">
+                        <span class="school">Southern New Hampshire University</span>
+                        <div class="education-meta">
+                            <span><i class="fas fa-calendar"></i> Expected May 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bachelor's Degree -->
             <div class="education-card card">
                 <div class="education-header">
                     <div class="degree-info">
@@ -330,6 +402,63 @@
                         <span class="course">Intermediate Python Programming</span>
                         <span class="course">Web Development Using JavaScript</span>
                         <span class="course">MongoDB and Python</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications-section">
+            <h2 class="section-title">
+                <i class="fas fa-certificate"></i> Professional Certifications
+            </h2>
+            
+            <div class="certifications-grid">
+                <!-- AI Solutions Certification -->
+                <div class="cert-card card">
+                    <div class="cert-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Building AI Solutions Using Advanced Algorithms</h3>
+                        <p>Advanced certification in AI algorithm development and implementation</p>
+                        <span class="cert-status in-progress">In Progress - Expected 2025</span>
+                    </div>
+                </div>
+                
+                <!-- Data Analysis Certification -->
+                <div class="cert-card card">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Data Analysis with Python</h3>
+                        <p>Comprehensive data analysis and visualization using Python libraries</p>
+                        <span class="cert-status completed">Completed 2025</span>
+                    </div>
+                </div>
+                
+                <!-- IBM AI Practitioner -->
+                <div class="cert-card card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>IBM Artificial Intelligence Practitioner Certificate</h3>
+                        <p>Industry-recognized AI practitioner certification from IBM</p>
+                        <span class="cert-status completed">Completed 2025</span>
+                    </div>
+                </div>
+                
+                <!-- Generative AI Certification -->
+                <div class="cert-card card">
+                    <div class="cert-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Generative AI in Action</h3>
+                        <p>Practical application of generative AI technologies and frameworks</p>
+                        <span class="cert-status completed">Completed 2025</span>
                     </div>
                 </div>
             </div>
@@ -361,7 +490,7 @@
                     <div class="award-content">
                         <h3>Academic Honors</h3>
                         <ul class="honors-list">
-                            <li>President's List (4.0 GPA, 4 terms)</li>
+                            <li>President's List (4.0 GPA, 6 terms)</li>
                             <li>Dean's List (GPA 3.5–3.99, 2 terms)</li>
                         </ul>
                     </div>
@@ -388,7 +517,7 @@
                         <h3>Professional Memberships</h3>
                         <ul class="membership-list">
                             <li>Member, National Society of Black Engineers (NSBE)</li>
-                            <li>Member, Student Veterans of America (SVA)</li>
+                            <li>Member, Technology Professionals Group (TPG)</li>
                         </ul>
                     </div>
                 </div>
